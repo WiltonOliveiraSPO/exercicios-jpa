@@ -12,17 +12,18 @@ public class ObterUsuarios {
 		EntityManagerFactory emf = Persistence.createEntityManagerFactory("exercicios-jpa");
 		EntityManager em = emf.createEntityManager();
 		
-		// String jpql = "select u from Usuario u";
+		// String jpql = "select u from usuario u";
 		// TypedQuery<Usuario> query = em.createQuery(jpql, Usuario.class);
-		// query.setMaxResults(100);
+		// query.setMaxResults(50);
 		
 		List<Usuario> usuarios = em
-				.createQuery("select u from Usuario u", Usuario.class)
-				.setMaxResults(100)
+				.createQuery("select u from usuario u", Usuario.class)
+				.setMaxResults(50)
 				.getResultList();
 		
 		for (Usuario usuario: usuarios) {
-			System.out.println("ID: " + usuario.getId()
+			System.out.println("ID: " + usuario.getId() 
+			+ "Nome: " + usuario.getNome()
 			+ "E-mail: " + usuario.getEmail());
 		}
 		

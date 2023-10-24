@@ -12,8 +12,8 @@ public class AlterarUsuario03 {
 		EntityManager em = emf.createEntityManager();
 		
 		em.getTransaction().begin();
-		Usuario usuario = em.find(Usuario.class, 1L);
-		usuario.setNome("Wilton Almeida Oliveira");
+		Usuario usuario = em.find(Usuario.class, 3L);
+		usuario.setNome("Silmara Almeida Oliveira");
 		
 		em.detach(usuario);
 		em.merge(usuario);
